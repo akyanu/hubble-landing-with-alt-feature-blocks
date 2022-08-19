@@ -1,0 +1,326 @@
+
+:root {
+    /* Primary Colors */
+    --clr-pink: hsl(322, 100%, 66%);
+    /* Neutral Colors */
+    --clr-very-pale-cyan: hsl(193, 100%, 96%);
+    --clr-very-dark-cyan: hsl(192, 100%, 9%);
+    --clr-gray-blue: hsl(208, 11%, 55%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1, 
+h2, 
+h3 { 
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 600; 
+    color: var(--clr-very-dark-cyan)
+}
+
+p,
+a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+p { 
+    font-weight: 400; 
+    color: var(--clr-gray-blue)
+}
+a { 
+    font-weight: 700; 
+    text-decoration: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Style header */
+header {
+    background-image: url("./images/bg-hero-mobile.svg");
+    background-color: var(--clr-very-pale-cyan);
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    min-width: 375px;
+}
+
+.header-top-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4.5rem;
+}
+
+.header-top-container .logo {
+    width: 20vw;
+    min-width: 150px;
+    max-width: 400px;
+}
+
+.header-top-container a {
+    float: right;
+}
+
+.header-bottom-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.header-sub-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.header-sub-container p {
+    color: var(--clr-very-dark-cyan)
+}
+
+
+/* Style main */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    margin-top: 5rem;
+    padding: 2rem;
+    min-width: 375px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    padding: 2rem;
+
+    border-radius: 25px;
+    box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.1);
+}
+
+.sub-container {
+    text-align: center;
+}
+.sub-container h2 {
+    margin-bottom: 1rem;
+}
+
+
+/* Style footer */
+footer {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-areas:
+        'logo' 
+        'main-info'
+        'links'
+        'socials'
+        'copyright';
+    gap: 2rem;
+
+    position: relative;
+    padding: 2rem;
+    background-color: var(--clr-very-dark-cyan);
+    margin-top: 10rem;
+    padding-top: 10rem;
+    min-width: 375px;
+}
+
+.footer-logo {
+    grid-area: logo;
+    filter: brightness(0) invert(1);
+}
+
+.footer-container {
+    grid-area: main-info;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: left;
+    justify-items: left;
+}
+
+.footer-container p {
+    color: white;
+}
+
+.footer-sub-container {
+    display: flex;
+    gap: 1.5rem;
+    max-width: 20vw;
+}
+
+.footer-sub-container .icon {
+    height: min-content;
+}
+
+.footer-links {
+    grid-area: links;
+    margin-block: 2rem;
+}
+
+.footer-links li {
+    margin-bottom: 1rem;
+    list-style: none;
+}
+.footer-links li a {
+    color: white;
+    font-weight: 400;
+}
+.footer-links li a:hover {
+    text-decoration: underline;
+}
+
+.socials {
+    grid-area: socials;
+    justify-self: center;
+}
+
+.socials .logo {
+    scale: 2;
+    color: white;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1px;
+    padding: 0.25rem;
+    margin-inline: 1.5rem;
+}
+.socials .logo:hover {      /* Why does chrome only turn this pink on the top left of the icons? */
+    color: var(--clr-pink);
+}
+
+.copyright {
+    grid-area: copyright;
+    justify-self: center;
+    color: white;
+}
+
+/* Style for the box overlayed over the footer */
+.floater {
+    border-radius: 25px;
+    box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 2rem;
+    
+    justify-self: center;
+    position: absolute;
+    top: -15%;
+    width: 70vw;
+    min-width: 350px;
+}
+
+/* Style buttons */
+.button {
+    margin-top: 1rem;
+}
+.header-top-container .button {
+    margin-top: 0;
+}
+
+.try-button {
+    color: var(--clr-very-dark-cyan);
+    background-color: white;
+    padding-block: 0.5rem;
+    padding-inline: 2rem;
+    border-radius: 50px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+
+}
+.try-button:hover {
+    color: var(--clr-gray-blue);
+}
+
+.get-started-button {
+    background-color: var(--clr-pink);
+    color: white;
+    padding-block: 1rem;
+    padding-inline: 2rem;
+    border-radius: 50px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+}
+.get-started-button:hover {
+    opacity: 0.7;
+}
+
+
+
+
+
+/* Style for larger screens */
+@media (min-width: 800px) {
+    
+    header {
+        background-image: url("./images/bg-hero-desktop.svg");
+    }
+
+    .header-bottom-container {
+        flex-direction: row;
+    }
+    .header-bottom-container img {
+        max-width: 50vw;
+    }
+    .header-sub-container {
+        text-align: left;
+    }
+
+    .container {
+        flex-direction: row-reverse;
+        margin-inline: 4rem;
+        
+    }
+    .container img {
+        max-width: 40vw;
+    }
+    .flowing-conversations-container {
+        flex-direction: row;
+    }
+    .sub-container {
+        text-align: left;
+    }
+
+    .floater {
+        width: 50vw;
+    }
+
+    footer {
+        grid-template-areas: 
+        'logo none none'
+        'main-info links socials'
+        'main-info copyright copyright';
+    }
+    .footer-links {
+        column-count: 2;
+        margin-block: 0;
+        column-gap: 10rem;
+    }
+    .copyright {
+        justify-self: right;
+    }
+
+}
+
